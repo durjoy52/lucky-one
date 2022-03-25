@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdDelete } from 'react-icons/md';
 import './CartSide.css';
-const CartSide = ({cart}) => {
+const CartSide = ({cart,deleteCart}) => {
     return (
         <div className='row bg-secondary mb-2 rounded align-items-center'>
                 <div className="col-md-4">
@@ -11,7 +11,7 @@ const CartSide = ({cart}) => {
                     <p className='fw-bold m-0'>{cart.name}</p>
                     <p><small>${cart.price}</small></p>
                 </div>
-                <div className="col-md-2">
+                <div onClick={_ => deleteCart(cart)} className="col-md-2">
                 <MdDelete color='#435' fontSize={30}></MdDelete>
                 </div>
         </div>

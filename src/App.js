@@ -13,11 +13,13 @@ function App() {
     .then(data => setItems(data))
   },[])
   const addCart = cart =>{
-    const newCarts = [...carts,cart]
-    if(newCarts.length > 4){
-      alert('4 items already added')
-    }else{
-    setCarts(newCarts)}
+const uniqueCarts = carts.filter(item => item !== cart)
+  const newCarts = [...uniqueCarts,cart]
+  if(newCarts.length > 4){
+    alert('4 items already added')
+    return
+  }
+  setCarts(newCarts)
   }
 const randomCart = _ =>{
  const randomCart = [carts[Math.floor(Math.random() * carts.length)]]
@@ -25,6 +27,10 @@ const randomCart = _ =>{
 }
   const removeItem = _ =>{
     setCarts([])
+  }
+  const deleteCart = (card) =>{
+    const item = carts.filter(cart => cart !== card)
+    setCarts(item)
   }
   return (
     <div className="App">
@@ -37,7 +43,7 @@ const randomCart = _ =>{
           </div>
           <div className="col-md-2">
          {
-           carts.map(cart =><CartSide cart={cart} key={cart.id}></CartSide>)
+           carts.map(cart =><CartSide deleteCart={deleteCart} cart={cart} key={cart.id}></CartSide>)
          }
          <button onClick={randomCart} className='btn btn-warning mb-2 d-block'>Choose for me</button>
          <button onClick={removeItem} className='btn btn-danger'>Choose again</button>
