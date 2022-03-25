@@ -16,7 +16,10 @@ function App() {
     const newCarts = [...carts,cart]
     setCarts(newCarts)
   }
-
+const randomCart = _ =>{
+ const randomCart = [carts[Math.floor(Math.random() * carts.length)]]
+ setCarts(randomCart)
+}
   const removeItem = _ =>{
     setCarts([])
   }
@@ -33,7 +36,7 @@ function App() {
          {
            carts.map(cart =><CartSide cart={cart} key={cart.id}></CartSide>)
          }
-         <button className='btn btn-warning mb-2 d-block'>Choose for me</button>
+         <button onClick={randomCart} className='btn btn-warning mb-2 d-block'>Choose for me</button>
          <button onClick={removeItem} className='btn btn-danger'>Choose again</button>
           </div>
         </div>
