@@ -14,7 +14,10 @@ function App() {
   },[])
   const addCart = cart =>{
     const newCarts = [...carts,cart]
-    setCarts(newCarts)
+    if(newCarts.length > 4){
+      alert('4 items already added')
+    }else{
+    setCarts(newCarts)}
   }
 const randomCart = _ =>{
  const randomCart = [carts[Math.floor(Math.random() * carts.length)]]
