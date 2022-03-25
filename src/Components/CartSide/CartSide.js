@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdDelete } from 'react-icons/md';
 import './CartSide.css';
 const CartSide = ({cart}) => {
     return (
@@ -6,9 +7,12 @@ const CartSide = ({cart}) => {
                 <div className="col-md-4">
                     <img className='w-100 rounded' src={cart.img} alt="" />
                 </div>
-                <div className="col-md-8 text-white">
-                    <p className='fw-bold mb-2'>{cart.name}</p>
+                <div className="col-md-6 text-white">
+                    <p className='fw-bold m-0'>{cart.name}</p>
                     <p><small>${cart.price}</small></p>
+                </div>
+                <div className="col-md-2">
+                <MdDelete color='#435' fontSize={30}></MdDelete>
                 </div>
         </div>
     );
