@@ -38,18 +38,18 @@ const randomCart = _ =>{
   return (
     <div className="App">
      <Header></Header>
-        <div className='row main-section'>
-          <div className='col-md-10 row'>
+        <div className='main-section'>
+          <div className='cards'>
           {
             items.map(item =><Card addCart={addCart} item={item} key={item.id}></Card>)
           }
           </div>
-          <div className="col-md-2 cart-side">
+          <div className="cart-side">
          {
            carts.map(cart =><CartSide deleteCart={deleteCart} cart={cart} key={cart.id}></CartSide>)
          }
-         <button onClick={randomCart} className='btn btn-warning my-2 d-block'>Choose for me</button>
-         <button onClick={removeItem} className='btn btn-danger mb-2'>Choose again</button>
+         <button onClick={randomCart} className='btn btn-warning mx-3 d-block'>Choose for me</button>
+         <button onClick={removeItem} className='btn btn-danger  m-3'>Choose again</button>
           </div>
         </div>
       

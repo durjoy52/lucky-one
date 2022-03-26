@@ -4,7 +4,7 @@ import './Card.css';
 const Card = ({item,addCart}) => {
     const {name,img,price} =item
     return (
-        <div className='col-md-4 mb-4'>
+        <div className='m-3'>
             <div className='card p-2' >
                 <img className='img-fluid rounded' src={img} alt="" />
                 <h4>{name}</h4>

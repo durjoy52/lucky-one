@@ -3,7 +3,7 @@ import { MdDelete } from 'react-icons/md';
 import './CartSide.css';
 const CartSide = ({cart,deleteCart}) => {
     return (
-        <div className='row bg-secondary mb-2 rounded align-items-center cart'>
+        <div className='row bg-secondary m-3 rounded align-items-center cart'>
                 <div className="col-md-4 ">
                     <img className='img-fluid rounded' src={cart.img} alt="" />
                 </div>
