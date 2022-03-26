@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Card from './Components/Card/Card';
 import CartSide from './Components/CartSide/CartSide';
+import Description from './Components/Description/Description';
 import Header from './Components/Header/Header';
 function App() {
   const [items,setItems] = useState([])
@@ -53,7 +54,7 @@ const randomCart = _ =>{
          <button onClick={removeItem} className='btn btn-danger  mx-3'>Choose again</button>
           </div>
         </div>
-      
+      <Description></Description>
     </div>
   );
 }
