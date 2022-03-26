@@ -45,11 +45,12 @@ const randomCart = _ =>{
           }
           </div>
           <div className="cart-side">
+            <h3 className='m-3 text-primary'>Selected cart {carts.length}</h3>
          {
            carts.map(cart =><CartSide deleteCart={deleteCart} cart={cart} key={cart.id}></CartSide>)
          }
-         <button onClick={randomCart} className='btn btn-warning mx-3 d-block'>Choose for me</button>
-         <button onClick={removeItem} className='btn btn-danger  m-3'>Choose again</button>
+         <button onClick={randomCart} className='btn btn-warning m-3 d-block'>Choose for me</button>
+         <button onClick={removeItem} className='btn btn-danger  mx-3'>Choose again</button>
           </div>
         </div>
       
