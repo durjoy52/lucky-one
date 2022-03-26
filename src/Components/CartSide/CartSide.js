@@ -11,8 +11,8 @@ const CartSide = ({cart,deleteCart}) => {
                     <p className='fw-bold m-0'>{cart.name}</p>
                     <p><small>${cart.price}</small></p>
                 </div>
-                <div onClick={_ => deleteCart(cart)} className="btn d-flex justify-content-center col-md-2">
-                <MdDelete color='#435' fontSize={30}></MdDelete>
+                <div onClick={_ => deleteCart(cart)} className="btn col-md-2">
+                <MdDelete color='#435' fontSize={25}></MdDelete>
                 </div>
         </div>
     );
