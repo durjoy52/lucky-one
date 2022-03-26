@@ -1,1 +1,11 @@
-
+@media screen and (max-width: 660px) {
+  .row {
+    align-items: center;
+  }
+  .cart {
+    width: 15rem;
+  }
+  p {
+    margin: 0;
+  }
+}

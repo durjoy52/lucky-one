@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import './App.css';
+import Card from './Components/Card/Card';
 import CartSide from './Components/CartSide/CartSide';
 import Header from './Components/Header/Header';
-import StoreSide from './Components/StoreSide/StoreSide';
 function App() {
   const [items,setItems] = useState([])
   const[carts,setCarts] = useState([])
@@ -22,6 +22,9 @@ const uniqueCarts = carts.filter(item => item !== cart)
   setCarts(newCarts)
   }
 const randomCart = _ =>{
+  if(carts.length === 0){
+    return
+  }
  const randomCart = [carts[Math.floor(Math.random() * carts.length)]]
  setCarts(randomCart)
 }
@@ -35,18 +38,18 @@ const randomCart = _ =>{
   return (
     <div className="App">
      <Header></Header>
-        <div className='row '>
+        <div className='row main-section'>
           <div className='col-md-10 row'>
           {
-            items.map(item =><StoreSide addCart={addCart} item={item} key={item.id}></StoreSide>)
+            items.map(item =><Card addCart={addCart} item={item} key={item.id}></Card>)
           }
           </div>
-          <div className="col-md-2">
+          <div className="col-md-2 cart-side">
          {
            carts.map(cart =><CartSide deleteCart={deleteCart} cart={cart} key={cart.id}></CartSide>)
          }
-         <button onClick={randomCart} className='btn btn-warning mb-2 d-block'>Choose for me</button>
-         <button onClick={removeItem} className='btn btn-danger'>Choose again</button>
+         <button onClick={randomCart} className='btn btn-warning my-2 d-block'>Choose for me</button>
+         <button onClick={removeItem} className='btn btn-danger mb-2'>Choose again</button>
           </div>
         </div>
       

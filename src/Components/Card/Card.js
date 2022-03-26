@@ -1,11 +1,12 @@
 import React from 'react';
 import { BsCartPlusFill } from 'react-icons/bs';
-const StoreSide = ({item,addCart}) => {
+import './Card.css';
+const Card = ({item,addCart}) => {
     const {name,img,price} =item
     return (
         <div className='col-md-4 mb-4'>
-            <div className='card' >
-                <img className='img-fluid' src={img} alt="" />
+            <div className='card p-2' >
+                <img className='img-fluid rounded' src={img} alt="" />
                 <h4>{name}</h4>
                 <p>Price: ${price}</p>
                 <button className='btn btn-primary' onClick={_ =>addCart(item)}>ADD TO CART <BsCartPlusFill  fontSize={20}></BsCartPlusFill></button>
@@ -14,4 +15,4 @@ const StoreSide = ({item,addCart}) => {
     );
 };
 
-export default StoreSide;
+export default Card;
